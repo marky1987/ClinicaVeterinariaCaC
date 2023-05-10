@@ -1,0 +1,239 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  width: 100%;
+  padding: 10px;
+}
+
+.menu a:hover {
+ 
+  color: black;
+}
+
+.itemMenu {
+  color: #621ceb !important;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.itemMenu:hover {
+  color: #fe88b1 !important;
+  transition: 0.2s;
+}
+
+
+.logo {
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+}
+.logoStyle{
+  height:80px;
+}
+
+.imgLogo {
+  width: 160px;
+  height: 140px;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  box-shadow: 0 3px 4px -2px gray;
+
+}
+
+.headerContainer {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100px;
+}
+
+.textHeader {
+  text-align: end;
+  justify-content: center;
+  height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  letter-spacing: 0.5px;
+
+}
+
+footer {
+  background-color: #dce3ff !important;
+  position: inherit;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 150px;
+  color: #000;
+  text-align: -webkit-center;
+}
+
+.footerTextTitle {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  color: #7374d6;
+  font-weight: bold;
+  display: initial;
+}
+
+.footerText {
+  display: initial;
+  color: rgb(19, 19, 19);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.imgSocialMedia {
+  margin: 0px 5px 0px 5px;
+  justify-content: left;
+}
+
+.imgSocial {
+  width: 25px;
+  height: 25px;
+}
+
+
+.contenedor {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  align-items: flex-start;
+  padding: 50px;
+}
+
+.containerSupHeader {
+  background-color: #fe88b1 !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerColumn {
+  flex-direction: column;
+  width: 100%;
+  align: text-before-edge;
+}
+
+.containerFooter{
+  display: flex; 
+  width: 70%; 
+  margin: 0px 20px 0px 20px; 
+  text-align: left;
+}
+
+
+/* @media (min-width:480px) {
+  .dos-columnas {
+      display: flex;
+      justify-content: space-between;
+  }
+} */
+
+
+@media only screen and (max-width:600px) {
+  .textHeader {
+    flex-direction: row;
+    text-align: center;
+    margin-right: 0px;
+  }
+
+  .menu {
+    flex-direction: row;
+    text-align: center;
+  }
+
+}
+
+@media only screen and (min-width: 1001px) {
+  .textHeader {
+    flex-direction: row;
+    text-align: right;
+    margin-right: 50px;
+  }
+  .status{
+    display: none;
+  }
+  .menu {
+    flex-direction: row;
+    text-align: right;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .textHeader {
+    flex-direction: row;
+    text-align: center;
+    margin-right: 0px;
+  }
+.itemMenu{
+  display: none;
+}
+  .menu {
+    flex-direction: row;
+    text-align: end;
+  }
+  .logo{
+    width: 10%;
+    justify-content: left;
+    align-items: center;
+  }
+  .logoStyle{
+    height:70px;
+    width: 250px;
+  }
+  .status{
+    display: inherit;
+  }
+  .menu.responsive{
+    position: relative; 
+    text-align: -webkit-right; 
+    align-self: self-start;}
+
+   .menu.responsive a.status{
+    position: revert;
+    display: flex;
+    padding: 8px;
+    justify-content: space-around;
+   }
+
+  .menu.responsive.status{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+.menu.responsive a{
+  float: none;
+  display: block;
+  text-align: right;
+  background-color: #fff;
+  width: 40%;
+}
+
+
+}

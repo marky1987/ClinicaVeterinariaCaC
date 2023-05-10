@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/consultorioStyle.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <title>Consultorio</title>
+</head>
+<body>
+    <div class="top-bar">
+        <span><ion-icon name="call-outline"></ion-icon> 4123-4123</span>
+    </div>
+    <header>
+        <div class="logoHeader">
+            <img src="img/logoveterinaria letras mas grandes.png" alt="Logotipo" />
+        </div>
+        <div class="toggle">
+            <a href="#">
+                <ion-icon name="menu-outline"></ion-icon>
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="Tienda.html">Tienda</a>
+            <a href="Consultorio.html">Consultorio</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script>
+        $(".toggle").on("click", function () {
+            if ($(".menu").hasClass("active")) {
+                $(".menu").removeClass("active");
+                $(this).find("a").html("<ion-icon name='menu-outline'></ion-icon>");
+            } else {
+                $(".menu").addClass("active");
+                $(this).find("a").html("<ion-icon name='close-outline'></ion-icon>");
+            }
+        })
+    </script>
+    </header>
+
+    <main>
+        <!-- Aquí puedes añadir el contenido principal de tu página -->
+        <h2 class="titulo">Consultorio</h2>
+        <!-- Al hacer click en el link se despliega un popup con un formulario para rellenar -->
+        <div class="turno">
+            <a href="#">Saca tu turno</a>
+        </div>
+        <div class="containerCards">
+            <section class="card">
+                <div class="face front">
+                    <ion-icon name="fish-outline"></ion-icon>
+                    <h3>Dermatologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Dermatologia</h3>
+                    <p>La dermatología veterinaria es la especialidad que se encarga del estudio, diagnóstico y tratamiento de las enfermedades de la piel de los animales.</p>
+                    <div class="link">
+                        <a href="#">Detalle</a>
+                    </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <ion-icon name="fish-outline"></ion-icon>
+                    <h3>Cardiologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Cardiologia</h3>
+                    <p>La cardiología veterinaria es la especialidad que se encarga del estudio, diagnóstico y tratamiento de las enfermedades del corazón de los animales.</p>
+                    <div class="link">
+                        <a href="#">Detalle</a>
+                    </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <ion-icon name="fish-outline"></ion-icon>
+                    <h3>Traumatologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Traumatologia</h3>
+                    <p>La traumatología veterinaria es la especialidad que se encarga del estudio, diagnóstico y tratamiento de las enfermedades de los huesos y articulaciones de los animales.</p>
+                    <div class="link">
+                        <a href="#">Detalle</a>
+                    </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <ion-icon name="fish-outline"></ion-icon>
+                    <h3>Oftalmologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Oftalmologia</h3>
+                    <p>La oftalmología veterinaria es la especialidad que se encarga del estudio, diagnóstico y tratamiento de las enfermedades de los ojos de los animales.</p>
+                    <div class="link">
+                        <a href="#">Detalle</a>
+                    </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <ion-icon name="fish-outline"></ion-icon>
+                    <h3>Kinesiologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Kinesiologia</h3>
+                    <p>La kinesiología veterinaria es la especialidad que se encarga del estudio, diagnóstico y tratamiento de las enfermedades de los músculos de los animales.</p>
+                    <div class="link">
+                        <a href="#">Detalle</a>
+                    </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <ion-icon name="fish-outline"></ion-icon>
+                    <h3>Electrocardiograma</h3>
+                </div>
+                <div class="face back">
+                    <h3>Electrocardiograma</h3>
+                    <p>El electrocardiograma es una prueba diagnóstica que registra la actividad eléctrica del corazón. Es una prueba sencilla, indolora y muy útil para el diagnóstico de enfermedades del corazón.</p>
+                    <div class="link">
+                        <a href="#">Detalle</a>
+                    </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <ion-icon name="fish-outline"></ion-icon>
+                    <h3>Rayos</h3>
+                </div>
+                <div class="face back">
+                    <h3>Rayos</h3>
+                    <p>La radiología veterinaria es la especialidad que se encarga del estudio, diagnóstico y tratamiento de las enfermedades de los huesos y articulaciones de los animales.</p>
+                    <div class="link">
+                        <a href="#">Detalle</a>
+                    </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <ion-icon name="fish-outline"></ion-icon>
+                    <h3>Cirugia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Cirugia</h3>
+                    <p>La cirugía veterinaria es la especialidad que se encarga del estudio, diagnóstico y tratamiento de las enfermedades de los huesos y articulaciones de los animales.</p>
+                    <div class="link">
+                        <a href="#">Detalle</a>
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="logoFooter">
+            <img src="img/logoveterinaria letras mas grandes.png" alt="Logotipo" />
+            <div class="redes-sociales">
+                <div class="red-1"><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></div>
+                <div class="red-2"><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></div>
+                <div class="red-3"><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></div>
+            </div>
+        </div>
+        
+        <div class="ubicacion">
+            <h6>UBICACI&Oacute;N</h6>
+            <p class="links">Av. Gaona 1567, Caba</p>
+            <p class="links">1405 - Buenos Aires.</p>
+            <p class="links">Todos los días de 9 a 21 hs.</p>
+        </div>
+        <div class="contactanos">
+            <h6>CONT&Aacute;CTANOS</h6>
+            <p class="links">4444-4444 | 3333-3333 (Consultas)</p>
+            <p class="links">1122222222 (Urgencias)</p>
+            <p class="links">Clinica@veterinaria.com</p>
+        </div>
+    </footer>
+</body>
+</html>
