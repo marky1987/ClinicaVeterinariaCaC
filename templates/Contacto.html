@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Clinica Veterinaria</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/carousel.css">
+    <link rel="icon" href="../static/img/isologo veterinaria.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="containerSupHeader">
+        <div>
+            <p class="textHeader">Consultas Generales: 4123-4123</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="headerContainer">
+            <div class="logo">
+                <img src="../static/img/logoveterinaria letras mas grandes.png" alt="isologo veterinaria" class="logoStyle">
+            </div>
+
+            <nav class="menu" id="myTopnav">
+
+                <ul style="display:block;">
+                    <a class="itemMenu" href="/">Inicio</a>
+                    <a class="itemMenu" href="/Peluqueria">Peluqueria</a>
+                    <a class="itemMenu" href="/Consultorio">Consultorio</a>
+                    <a class="itemMenu" href="/Contacto">Contacto</a>
+                    <a class="status" onclick="myFunction()" href="javascript:void(0);"> <i class="fa fa-bars"
+                            style="color: #7374d6;" aria-hidden="true"></i></a>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main style="width: 100%; height: 100%;">
+
+        <div class="cuadro">
+            <h2 class="titulo">Solicite un turno ahora mismo</h2>
+            <p class="informacion">Brindenos sus datos para reservar un turno de peluqueria</p>
+            <form id="form" class="form" method="post" action="https://formspree.io/f/xjvdzoaa" method="POST">
+                <input type="text" name="Nombre y Apellido" placeholder="Nombre y Apellido*" required>
+                <input type="email" name="correo" placeholder="Correo Electronico*" required>
+                <input type="number" name="telefono" placeholder="Numero de Telefono*" required>
+                <input type="date" id="datePickerId" name="Fecha" placeholder="Fecha*" required>
+                <select name="horario" >
+                    <option>10:00</option>
+                    <option>15:00</option>
+                    <option>19:00</option>
+                </select>    
+                <button class="botones" type="reset">Limpiar</button>
+                <button class="botones" type="submit">Enviar</button>
+            </form>
+        <br></br>
+         </div>
+    
+
+    </main>
+
+    <footer>
+        <div class="containerFooter">
+            <div style="width: 20%;">
+                <div class="logo">
+                    <img src="img/logoveterinaria.png" class="imgLogo" alt="Icono">
+                </div>
+            </div>
+
+            <div style="width: 30%;">
+                <div>
+                    <h5>
+                        <span class="footerTextTitle">UBICACIÓN</span>
+                    </h5>
+                    <div>
+                        <p class="text-align-left m-text-align-center">
+                            <span class="footerText">Av. Gaona 1567.<br> Caba - Buenos Aires.<br>Todos los días
+                                <br>de 9 a 21 hs.</span>
+                            <span class="footerText"><br></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 30%;">
+                <div>
+                    <h5>
+                        <span class="footerTextTitle">CONTACTANOS</span>
+                    </h5>
+                    <div data-element-type="paragraph" data-version="5">
+                        <p class="text-align-left m-text-align-center">
+                            <span class="footerText">4444-4444 <br> 15-3333-3333 (Consultas)
+                                <br> 15-3333-3333 (Urgencias)
+                                <br>Clinica@veterinaria.com</span>
+                            <span class="footerText"><br></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flexright">
+                <div style="text-align: left;display: block;">
+                    <h5>
+                        <span class="footerTextTitle">REDES SOCIALES</span>
+                    </h5>
+                    <div style="display: flex;">
+                        <div class="imgSocialMedia">
+                            <a href="#"> <img src="img/fb.png" class="imgSocial" alt="Icono"></a>
+                        </div>
+                        <div class="imgSocialMedia">
+                            <a href="#"> <img src="img/ig.png" class="imgSocial" alt="Icono"> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        datePickerId.min = new Date().toLocaleDateString('fr-ca');
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+<script>
+    const $form = document.querySelector('#form')
+    $form.addEventListener('submit', handleSubmit)
+
+    async function handleSubmit(event)
+    {
+        event.preventDefault()
+        const form = new FormData(this)
+        const response = await fetch(this.action, {
+            method: this.method,
+            body:form,
+            headers: {"Accept": "application/json"}
+        })
+        if (response.ok)
+        {
+            alert("Enviado")
+        }
+    }
+</script>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "menu") {
+                x.className += " responsive";
+
+            } else {
+                x.className = "menu";
+            }
+        }
+    </script>
+</body>
+
+</html>

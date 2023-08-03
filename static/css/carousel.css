@@ -79,12 +79,12 @@
 }
 
 /* Fading animation */
-.fade {
+.fadeCarrousel {
   animation-name: fade;
   animation-duration: 1.5s;
 }
 
-@keyframes fade {
+@keyframes fadeCarrousel {
   from {opacity: .4} 
   to {opacity: 1}
 }

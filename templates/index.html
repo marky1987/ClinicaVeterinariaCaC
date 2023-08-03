@@ -8,12 +8,11 @@
     <title>Clinica Veterinaria</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/carousel.css">
-    <link rel="icon" href="img/isologo veterinaria.ico">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/carousel.css">
+    <link rel="icon" href="../static/img/isologo veterinaria.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 
 <body>
 
@@ -26,17 +25,18 @@
     <header>
         <div class="headerContainer">
             <div class="logo">
-                <img src="img/logoveterinaria letras mas grandes.png" alt="isologo veterinaria" class="logoStyle">
+                <img src="../static/img/logoveterinaria letras mas grandes.png" alt="isologo veterinaria" class="logoStyle">
             </div>
 
             <nav class="menu" id="myTopnav">
-                
+
                 <ul style="display:block;">
-                    <a class="itemMenu" href="index.html">Inicio</a>
-                    <a class="itemMenu" href="Tienda.html">Tienda</a>
-                    <a class="itemMenu" href="Consultorio.html">Consultorio</a>
-                    <a class="itemMenu" href="#">Contacto</a>
-                    <a class="status" onclick="myFunction()" href="javascript:void(0);"> <i class="fa fa-bars" style="color: #7374d6;" aria-hidden="true"></i></a>
+                    <a class="itemMenu" href="/">Inicio</a>
+                    <a class="itemMenu" href="/Peluqueria">Peluqueria</a>
+                    <a class="itemMenu" href="/Consultorio">Consultorio</a>
+                    <a class="itemMenu" href="/Contacto">Contacto</a>
+                    <a class="status" onclick="myFunction()" href="javascript:void(0);"> <i class="fa fa-bars"
+                            style="color: #7374d6;" aria-hidden="true"></i></a>
 
 
                 </ul>
@@ -50,20 +50,20 @@
 
         <div class="slideshow-container">
 
-            <div class="mySlides fade" style="display: none;">
+            <div class="mySlides fadeCarrousel" style="display: none;">
 
-                <img src="img/img1.webp" class="imgCarousel" style="width: 100%; height: 500px;">
+                <img src="../static/img/img1.webp" class="imgCarousel" style="width: 100%; height: 500px;">
             </div>
 
-            <div class="mySlides fade" style="display: none;">
+            <div class="mySlides fadeCarrousel" style="display: none;">
 
-                <img src="img/peluquero-canino.jpg" class="imgCarousel" style="width: 100%; height: 500px;">
+                <img src="../static/img/peluquero-canino.jpg" class="imgCarousel" style="width: 100%; height: 500px;">
 
             </div>
 
-            <div class="mySlides fade" style="display: block;">
+            <div class="mySlides fadeCarrousel" style="display: block;">
 
-                <img src="img/snacks-naturales-para-perros-y-gatos.jpg" class="imgCarousel"
+                <img src="../static/img/snacks-naturales-para-perros-y-gatos.jpg" class="imgCarousel"
                     style="width: 100%; height: 500px;">
 
             </div>
@@ -96,7 +96,7 @@
                 </div>
                 <div style="width: 90%; align-self: center; text-align: center;">
                     <article>
-                        <img src="img/close-up-veterinarian-taking-care-dog.jpg" style="max-width: 50%">
+                        <img src="../static/img/close-up-veterinarian-taking-care-dog.jpg" style="max-width: 50%">
                     </article>
                 </div>
             </div>
@@ -113,18 +113,13 @@
 
         </div>
 
-
-
-
     </main>
-
-
 
     <footer>
         <div class="containerFooter">
             <div style="width: 20%;">
                 <div class="logo">
-                    <img src="img/logoveterinaria.png" class="imgLogo" alt="Icono">
+                    <img src="../static/img/logoveterinaria.png" class="imgLogo" alt="Icono">
                 </div>
             </div>
 
@@ -133,16 +128,14 @@
                     <h5>
                         <span class="footerTextTitle">UBICACIÓN</span>
                     </h5>
+                    <div>
+                        <p class="text-align-left m-text-align-center">
+                            <span class="footerText">Av. Gaona 1567.<br> Caba - Buenos Aires.<br>Todos los días
+                                <br>de 9 a 21 hs.</span>
+                            <span class="footerText"><br></span>
+                        </p>
+                    </div>
                 </div>
-                <div style="transition: none 0s ease 0s; text-align: left; display: block; width: 90%;"
-                    data-element-type="paragraph" data-version="5">
-                    <p class="text-align-left m-text-align-center">
-                        <span class="footerText">Av. Gaona 1567, Caba <br> 1405 - Buenos Aires.<br>Todos los días de 9 a
-                            21 hs.</span>
-                        <span class="footerText"><br></span>
-                    </p>
-                </div>
-
             </div>
 
             <div style="width: 30%;">
@@ -150,32 +143,32 @@
                     <h5>
                         <span class="footerTextTitle">CONTACTANOS</span>
                     </h5>
-                </div>
-                <div style="transition: none 0s ease 0s; text-align: left; display: block; width: 90%;"
-                    data-element-type="paragraph" data-version="5">
-                    <p class="text-align-left m-text-align-center">
-                        <span class="footerText">4444-4444 | 3333-3333 (Consultas)<br>1122222222
-                            (Urgencias)<br>Clinica@veterinaria.com</span>
-                        <span class="footerText"><br></span>
-                    </p>
-                </div>
-
-            </div>
-
-            <div style="width: 25%;">
-                <h5>
-                    <span class="footerTextTitle">REDES SOCIALES</span>
-                </h5>
-                <div style="display: flex;">
-                    <div class="imgSocialMedia">
-                        <a href="#"> <img src="img/fb.png" class="imgSocial" alt="Icono"></a>
-                    </div>
-                    <div class="imgSocialMedia">
-                        <a href="#"> <img src="img/ig.png" class="imgSocial" alt="Icono"> </a>
+                    <div data-element-type="paragraph" data-version="5">
+                        <p class="text-align-left m-text-align-center">
+                            <span class="footerText">4444-4444 <br> 15-3333-3333 (Consultas)
+                                <br> 15-3333-3333 (Urgencias)
+                                <br>Clinica@veterinaria.com</span>
+                            <span class="footerText"><br></span>
+                        </p>
                     </div>
                 </div>
             </div>
 
+            <div class="flexright">
+                <div style="text-align: left;display: block;">
+                    <h5>
+                        <span class="footerTextTitle">REDES SOCIALES</span>
+                    </h5>
+                    <div style="display: flex;">
+                        <div class="imgSocialMedia">
+                            <a href="#"> <img src="../static/img/fb.png" class="imgSocial" alt="Icono"></a>
+                        </div>
+                        <div class="imgSocialMedia">
+                            <a href="#"> <img src="../static/img/ig.png" class="imgSocial" alt="Icono"> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </footer>
@@ -209,16 +202,16 @@
         }
     </script>
 
-<script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "menu") {
-        x.className += " responsive";
-        
-      } else {
-        x.className = "menu";
-      }
-    }
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "menu") {
+                x.className += " responsive";
+
+            } else {
+                x.className = "menu";
+            }
+        }
     </script>
 </body>
 
