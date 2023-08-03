@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consultorio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/carousel.css">
+    <link rel="icon" href="../static/img/isologo veterinaria.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="../static/css/consultorioStyle.css">
+</head>
+
+
+<body>
+<div class="containerSupHeader">
+    <div>
+        <p class="textHeader">Consultas Generales: 4123-4123</p>
+    </div>
+</div>
+
+<header>
+    <div class="headerContainer">
+        <div class="logo">
+            <img src="../static/img/logoveterinaria letras mas grandes.png" alt="isologo veterinaria" class="logoStyle">
+        </div>
+
+        <nav class="menu" id="myTopnav">
+
+            <ul style="display:block;">
+                <a class="itemMenu" href="/">Inicio</a>
+                <a class="itemMenu" href="/Peluqueria">Peluqueria</a>
+                <a class="itemMenu" href="/Consultorio">Consultorio</a>
+                <a class="itemMenu" href="/Contacto">Contacto</a>
+                <a class="status" onclick="myFunction()" href="javascript:void(0);">
+                    <i class="fa fa-bars" style="color: #7374d6;" aria-hidden="true"></i></a>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- Aquí puedes añadir el contenido principal de tu página -->
+    <h2 class="titulo">Consultorio</h2>
+
+    <!-- Button trigger modal -->
+    <div class="botonFormulario">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#turno-modal">saca tu turno</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#turnosReservadosModal">turnos
+                reservados
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="turno-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Formulario de reserva de turno
+                    </h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/turno" method="post" id="form">
+                        <!--Nombre del cliente-->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Escriba aqui su nombre"
+                                   name="name">
+                        </div>
+                        <!--Apellido del cliente-->
+                        <div class="mb-3">
+                            <label for="apellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="apellido"
+                                   placeholder="Escriba aqui su apellido" name="lastName">
+                        </div>
+                        <!--Email del cliente-->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email"
+                                   placeholder="Escriba aqui su direccion de correo" name="email">
+                        </div>
+                        <!--Telefono del cliente-->
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Telefono</label>
+                            <input type="tel" class="form-control" id="telefono"
+                                   placeholder="Escriba aqui su numero de telefono" name="numberPhone">
+                        </div>
+                        <!--Nombre de la mascota-->
+                        <div class="mb-3">
+                            <label for="nombreMascota" class="form-label">Nombre de la mascota</label>
+                            <input type="text" class="form-control" id="nombreMascota"
+                                   placeholder="Escriba aqui el nombre de su mascota" name="petName">
+                        </div>
+                        <!--Tipo de mascota se mostrara en un campo tipo select-->
+                        <div class="mb-3">
+                            <label for="tipoDeMascota" class="form-label">Tipo de mascota</label>
+                            <select class="form-select" id="tipoDeMascota" name="petType">
+                                <option selected>Seleccione una opcion</option>
+                                <option value="Perro">Perro</option>
+                                <option value="Gato">Gato</option>
+                                <option value="Conejo">Conejo</option>
+                                <option value="Hamster">Hamster</option>
+                                <option value="Ave">Ave</option>
+                                <option value="Peces">Peces</option>
+                                <option value="Mascotas ex&oacute;ticas">Mascotas ex&oacute;ticas</option>
+                            </select>
+                        </div>
+                        <!--Sexo del animal-->
+                        <div class="mb-3">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select class="form-select" id="sexo" name="animalSex">
+                                <option selected>Seleccione una opcion</option>
+                                <option value="Macho">Macho</option>
+                                <option value="Hembra">Hembra</option>
+                                <option value="Desconozco">Desconozco</option>
+                            </select>
+                        </div>
+                        <!--Edad del animal-->
+                        <div class="mb-3">
+                            <label for="edad" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="edad"
+                                   placeholder="Escriba edad del animal. Aclarar meses o años" name="age">
+                        </div>
+                        <!--Peso del animal-->
+                        <div class="mb-3">
+                            <label for="peso" class="form-label">Peso (en Kilogramos)</label>
+                            <input type="number" class="form-control" id="peso"
+                                   placeholder="Escriba el peso del animal, si no lo sabe ponga desconozco"
+                                   name="weight">
+                        </div>
+                        <!--Motivo de la consulta-->
+                        <div class="mb-3">
+                            <label for="motivoConsulta" class="form-label">Motivo de la consulta</label>
+                            <select class="form-select" id="motivoConsulta" name="motConsulta">
+                                <option selected>Seleccione una opcion</option>
+                                <option value="Dermatologia">Dermatologia</option>
+                                <option value="Cardiologia">Cardiologia</option>
+                                <option value="Traumatologia">Traumatologia</option>
+                                <option value="Oftalmologia">Oftalmologia</option>
+                                <option value="Kinesiologia">Kinesiologia</option>
+                                <option value="Clinica">Clinica</option>
+                                <option value="Rayos">Rayos</option>
+                                <option value="Vacunacion">Vacunacion</option>
+                                <option value="Cirugia">Cirugia</option>
+                                <option value="ECG">ECG</option>
+                            </select>
+                        </div>
+                        <!--Fecha y hora del turno-->
+                        <div class="mb-3">
+                            <label for="fecha" class="form-label">Fecha</label>
+                            <input type="date" class="form-control" id="fecha" placeholder="Escriba aqui la fecha"
+                                   name="date">
+                        </div>
+                        <div class="mb-3">
+                            <label for="hora" class="form-label">Hora</label>
+                            <input type="time" class="form-control" id="hora" placeholder="Escriba aqui la hora"
+                                   name="time">
+                        </div>
+                        <input type="submit" class="btn btn-success" id="button" value="Reservar turno">
+                    </form>
+
+                    <script type="text/javascript"
+                            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+                    <script type="text/javascript">
+                        emailjs.init('yKAPvJ6fB9e12Iybe')
+                    </script>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- El modal -->
+    <div class="modal fade modal-auto" tabindex="-1" role="dialog" id="turnosReservadosModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Turnos reservados
+                    </h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- La tabla -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Hora</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Nombre mascota</th>
+                                <th scope="col">Motivo consulta</th>
+                                <th scope="col">Edad mascota</th>
+                                <th scope="col">Peso mascota</th>
+                                <th scope="col">Sexo mascota</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for turno in turnos %}
+                                <tr>
+                                <td>{{ turno.fecha }}</td>
+                                <td>{{ turno.hora }}</td>
+                                <td>{{ turno.nombre }}</td>
+                                <td>{{ turno.mail }}</td>
+                                <td>{{ turno.mascota }}</td>
+                                <td>{{ turno.motivo }}</td>
+                                <td>{{ turno.edad }}</td>
+                                <td>{{ turno.peso }} kg.</td>
+                                <td>{{ turno.sexo }}</td>
+                                <td>
+                                    <!-- Botones de editar y eliminar -->
+                                    <button class="btn btn-primary edit-button" data-bs-toggle="modal"
+                                            data-bs-target="#editar-turno" data-id="{{ turno.id }}">Editar
+                                    </button>
+
+                                </td>
+                                <td>
+                                <button type="button" class="btn btn-danger delete-button"
+                                data-id="{{ turno.id }}">Eliminar</button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <!-- y así sucesivamente... -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class=" modal-footer">
+                            {#<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>#}
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="editar-turno">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            Editar turno
+                        </h5>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/Consultorio" method="post" id="formEdit">
+                            <!--Nombre del cliente-->
+                            <div class="mb-3">
+                                <label for="fechaEdit" class="form-label">Fecha</label>
+                                <input type="text" class="form-control" id="fechaEdit" name="date">
+                            </div>
+                            <!--Hora del turno-->
+                            <div class="mb-3">
+                                <label for="horaEdit" class="form-label">Hora</label>
+                                <input type="text" class="form-control" id="horaEdit" name="time">
+                            </div>
+                            <!--Email del cliente-->
+                            <div class="mb-3">
+                                <label for="nombreEdit" class="form-label">Nombre del cliente</label>
+                                <input type="text" class="form-control" id="nombreEdit" name="name">
+                            </div>
+                            <!--Telefono del cliente-->
+                            <div class="mb-3">
+                                <label for="mail" class="form-label">Correo electr&oacute;nico</label>
+                                <input type="email" class="form-control" id="mail" name="email">
+                            </div>
+                            <!--Nombre de la mascota-->
+                            <div class="mb-3">
+                                <label for="nombreMascotaEdit" class="form-label">Nombre de la mascota</label>
+                                <input type="text" class="form-control" id="nombreMascotaEdit" name="petName">
+                            </div>
+                            <!--Tipo de mascota se mostrara en un campo tipo select-->
+                            <div class="mb-3">
+                                <label for="tipoDeMascotaEdit" class="form-label">Tipo de mascota</label>
+                                <select class="form-select" id="tipoDeMascotaEdit" name="petType">
+                                    <option selected>Seleccione una opcion</option>
+                                    <option value="Perro">Perro</option>
+                                    <option value="Gato">Gato</option>
+                                    <option value="Conejo">Conejo</option>
+                                    <option value="Hamster">Hamster</option>
+                                    <option value="Ave">Ave</option>
+                                    <option value="Peces">Peces</option>
+                                    <option value="Mascotas ex&oacute;ticas">Mascotas ex&oacute;ticas</option>
+                                </select>
+                            </div>
+                            <!--Motivo de la consulta-->
+                            <div class="mb-3">
+                                <label for="motivoConsultaEdit" class="form-label">Motivo de la consulta</label>
+                                <select class="form-select" id="motivoConsultaEdit" name="motConsulta">
+                                    <option selected>Seleccione una opcion</option>
+                                    <option value="Dermatologia">Dermatologia</option>
+                                    <option value="Cardiologia">Cardiologia</option>
+                                    <option value="Traumatologia">Traumatologia</option>
+                                    <option value="Oftalmologia">Oftalmologia</option>
+                                    <option value="Kinesiologia">Kinesiologia</option>
+                                    <option value="Clinica">Clinica</option>
+                                    <option value="Rayos">Rayos</option>
+                                    <option value="Vacunacion">Vacunacion</option>
+                                    <option value="Cirugia">Cirugia</option>
+                                    <option value="ECG">ECG</option>
+                                </select>
+                            </div>
+                            <!--Edad del animal-->
+                            <div class="mb-3">
+                                <label for="edadEdit" class="form-label">Edad</label>
+                                <input type="number" class="form-control" id="edadEdit" name="age">
+                            </div>
+                            <!--Peso del animal-->
+                            <div class="mb-3">
+                                <label for="pesoEdit" class="form-label">Peso (en Kilogramos)</label>
+                                <input type="number" class="form-control" id="pesoEdit"
+                                       name="weight">
+                            </div>
+                            <!--Sexo del animal-->
+                            <div class="mb-3">
+                                <label for="sexoEdit" class="form-label">Sexo</label>
+                                <select class="form-select" id="sexoEdit" name="animalSex">
+                                    <option selected>Seleccione una opcion</option>
+                                    <option value="Macho">Macho</option>
+                                    <option value="Hembra">Hembra</option>
+                                    <option value="Desconozco">Desconozco</option>
+                                </select>
+                            </div>
+                            <div class="mb-3" hidden="hidden">
+                                <label for="idEdit" class="form-label"></label>
+                                <input type="text" id="idEdit">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit" form="formEdit" id="save-button">Editar turno
+                        </button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="containerCards">
+            <section class="card">
+                <div class="face front">
+                    <img src="../static/img/Consultorio/dermatologia-2_render.jpg" alt="dermatologia-animal">
+                    <h3>Dermatologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Dermatologia</h3>
+                    <p>La dermatología veterinaria es la especialidad que se encarga del estudio, diagnóstico y
+                        tratamiento
+                        de las enfermedades de la piel de los animales.</p>
+                    <div class="link">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <img src="../static/img/Consultorio/cardiologia_render.jpg" alt="cardiologia_animal">
+                    <h3>Cardiologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Cardiologia</h3>
+                    <p>La cardiología veterinaria es la especialidad que se encarga del estudio, diagnóstico y
+                        tratamiento
+                        de las enfermedades del corazón de los animales.</p>
+                    <div class="link">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <img src="../static/img/Consultorio/traumatologia_render.jpg" alt="traumatologia_animal">
+                    <h3>Traumatologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Traumatologia</h3>
+                    <p>La traumatología veterinaria es la especialidad que se encarga del estudio, diagnóstico y
+                        tratamiento
+                        de las enfermedades de los huesos y articulaciones de los animales.</p>
+                    <div class="link">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <img src="../static/img/Consultorio/oftalmologia_render.jpg" alt="oftalmologia_animal">
+                    <h3>Oftalmologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Oftalmologia</h3>
+                    <p>La oftalmología veterinaria es la especialidad que se encarga del estudio, diagnóstico y
+                        tratamiento
+                        de las enfermedades de los ojos de los animales.</p>
+                    <div class="link">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <img src="../static/img/Consultorio/fisio_render.jpg" alt="kinesiologia_animal">
+                    <h3>Kinesiologia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Kinesiologia</h3>
+                    <p>La kinesiología veterinaria es la especialidad que se encarga del estudio, diagnóstico y
+                        tratamiento
+                        de las enfermedades de los músculos de los animales.</p>
+                    <div class="link">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <img src="../static/img/Consultorio/electro_render.jpg" alt="electrocardiograma_animal">
+                    <h3>Clinica/ECG</h3>
+                </div>
+                <div class="face back">
+                    <h3>Clinica/ECG</h3>
+                    <p>Clinica: consultas, control, emergencias, vacunacion.</p>
+                    <p>El electrocardiograma es una prueba diagnóstica que registra la actividad eléctrica del corazón.
+                        Es
+                        una prueba sencilla, indolora y muy útil para el diagnóstico de enfermedades del corazón.</p>
+                    <div class="link">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <img src="../static/img/Consultorio/rayosx_render.jpg" alt="rayosx_animal">
+                    <h3>Rayos</h3>
+                </div>
+                <div class="face back">
+                    <h3>Rayos</h3>
+                    <p>Utilizaci&oacute;n de im&aacute;genes para el diagn&oacute;stico y tratamiento de enfermedades y
+                        lesiones, gesti&oacute;n de atenci&oacute;n al paciente y gu&iacute;a de tratamiento medico
+                        veterinario.</p>
+                    <div class="link">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <div class="face front">
+                    <img src="../static/img/Consultorio/cirugia_render.jpg" alt="cirugia_animal">
+                    <h3>Cirugia</h3>
+                </div>
+                <div class="face back">
+                    <h3>Cirugia</h3>
+                    <p>Tratamiento quir&uacute;rgico con fines preventivos, diagn&oacute;sticos o paleativos.
+                        Tratamiento de
+                        patologias que afectan organos internos, piel y musculatura de los animales.</p>
+                    <div class="link">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+</main>
+
+<footer>
+    <div class="containerFooter">
+        <div style="width: 20%;">
+            <div class="logo">
+                <img src="../static/img/logoveterinaria.png" class="imgLogo" alt="Icono">
+            </div>
+        </div>
+
+        <div style="width: 30%;">
+            <div>
+                <h5>
+                    <span class="footerTextTitle">UBICACIÓN</span>
+                </h5>
+                <div>
+                    <p class="text-align-left m-text-align-center">
+                            <span class="footerText">Av. Gaona 1567.<br> Caba - Buenos Aires.<br>Todos los días
+                                <br>de 9 a 21 hs.</span>
+                        <span class="footerText"><br></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 30%;">
+            <div>
+                <h5>
+                    <span class="footerTextTitle">CONTACTANOS</span>
+                </h5>
+                <div data-element-type="paragraph" data-version="5">
+                    <p class="text-align-left m-text-align-center">
+                            <span class="footerText">4444-4444 <br> 15-3333-3333 (Consultas)
+                                <br> 15-3333-3333 (Urgencias)
+                                <br>Clinica@veterinaria.com</span>
+                        <span class="footerText"><br></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flexright">
+            <div style="text-align: left;display: block;">
+                <h5>
+                    <span class="footerTextTitle">REDES SOCIALES</span>
+                </h5>
+                <div style="display: flex;">
+                    <div class="imgSocialMedia">
+                        <a href="#"> <img src="../static/img/fb.png" class="imgSocial" alt="Icono"></a>
+                    </div>
+                    <div class="imgSocialMedia">
+                        <a href="#"> <img src="../static/img/ig.png" class="imgSocial" alt="Icono"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $('.edit-button').click(function () {
+            var id = $(this).data('id');
+            debugger;
+            $.get('/Consultorio/' + id, function (data) {
+                debugger;
+                $('#fechaEdit').val(data.fecha);
+                $('#horaEdit').val(data.hora);
+                $('#nombreEdit').val(data.nombre);
+                $('#mail').val(data.mail);
+                $('#nombreMascotaEdit').val(data.mascota);
+                $('#tipoDeMascotaEdit').val(data.tipo);
+                $('#motivoConsultaEdit').val(data.motivo);
+                $('#edadEdit').val(data.edad);
+                $('#pesoEdit').val(data.peso);
+                $('#sexoEdit').val(data.sexo);
+                $('#idEdit').val(data.id);
+            });
+        });
+
+        // Event listener for save changes button
+        $('#save-button').click(function () {
+            debugger;
+            var fecha = $('#fechaEdit').val();
+            var hora = $('#horaEdit').val();
+            var nombre = $('#nombreEdit').val();
+            var mail = $('#mail').val();
+            var mascota = $('#nombreMascotaEdit').val();
+            var tipo = $('#tipoDeMascotaEdit').val();
+            var motivo = $('#motivoConsultaEdit').val();
+            var edad = $('#edadEdit').val();
+            var peso = $('#pesoEdit').val();
+            var sexo = $('#sexoEdit').val();
+            var id = $('#idEdit').val();
+
+            $.ajax({
+                type: "POST",
+                url: "/turno/editar/" + id,
+                contentType: "application/json",
+                data: JSON.stringify({
+                    'date': fecha,
+                    'time': hora,
+                    'name': nombre,
+                    'email': mail,
+                    'petName': mascota,
+                    'petType': tipo,
+                    'motConsulta': motivo,
+                    'age': edad,
+                    'weight': peso,
+                    'animalSex': sexo
+                }),
+                success: function (response) {
+                    debugger;
+                    if (response.message === "success") {
+                        alert("Turno editado correctamente")
+                        window.location.href = "/Consultorio";
+                    }
+                },
+                dataType: "json"
+            });
+        });
+    });
+</script>
+
+<script>
+    const btn = document.getElementById('button');
+    const form = document.getElementById('form')
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        btn.value = 'Enviando...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_w83l77b';
+
+        // Recoger los datos del formulario
+        const formData = new FormData(form);
+
+        // Convertir los datos del formulario a JSON
+        const data = {};
+        for (let [key, value] of formData.entries()) {
+            data[key] = value;
+        }
+
+        // Hacer una solicitud POST al controlador de Flask
+        fetch('/turno', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Aquí puedes manejar la respuesta de tu controlador de Flask
+                // Si el servidor responde con éxito, envía el correo electrónico
+                if (data.message === 'success') {
+                    emailjs.sendForm(serviceID, templateID, form)
+                        .then(() => {
+                            btn.value = 'Reservar turno';
+                            {#redirect a la pantalla de Consultorio#}
+                            window.location.href = "/Consultorio";
+                        }, (err) => {
+                            btn.value = 'Enviar Email';
+                            alert(JSON.stringify(err));
+                        });
+                } else {
+                    btn.value = 'Enviar Email';
+                    alert('Algo salió mal, por favor, intente de nuevo');
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    });
+</script>
+
+<script>
+    $('.delete-button').click(function () {
+        var id = $(this).data('id'); // Obtén el ID del registro a eliminar.
+
+        $.ajax({
+            type: "DELETE",
+            url: "/turno/eliminar/" + id,
+            success: function (response) {
+                if (response.message === "success") {
+                        alert("Turno eliminado correctamente")
+                        window.location.href = "/Consultorio";
+                    }
+            },
+            dataType: "json"
+        });
+    });
+</script>
+
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "menu") {
+            x.className += " responsive";
+
+        } else {
+            x.className = "menu";
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
